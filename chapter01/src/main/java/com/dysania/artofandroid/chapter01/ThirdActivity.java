@@ -1,4 +1,4 @@
-package com.dysania.artofandroid;
+package com.dysania.artofandroid.chapter01;
 
 import android.content.Intent;
 import android.os.Bundle;

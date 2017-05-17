@@ -1,17 +1,16 @@
-package com.dysania.artofandroid;
+package com.dysania.artofandroid.chapter01;
 
 import android.content.Intent;
-import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class FirstActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
-    private static final String TAG = "FirstActivity";
-    private static final String EXTRA_DATA = "extra_data";
+    private static final String TAG = "SecondActivity";
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -22,27 +21,20 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_second);
         Log.d(TAG, "onCreate");
 
-        findViewById(R.id.btn_first).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.btn_second).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+//                Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+//                startActivity(intent);
+                Intent intent = new Intent("com.dysania.action.a");
+                intent.addCategory("com.dysania.category.a");
+                intent.setDataAndType(Uri.parse("file://abc"), "text/plain");
                 startActivity(intent);
             }
         });
-
-        if(savedInstanceState != null) {
-            String extraData = savedInstanceState.getString(EXTRA_DATA);
-            Log.d(TAG, "onCreate EXTRA DATA is: " + extraData);
-        }
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        Log.d(TAG, "onConfigurationChanged, newOrientation is: " + newConfig.orientation);  //竖屏为1，横屏为2
     }
 
     @Override
@@ -61,8 +53,6 @@ public class FirstActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         Log.d(TAG, "onRestoreInstanceState");
-        String extraData = savedInstanceState.getString(EXTRA_DATA);
-        Log.d(TAG, "onRestoreInstanceState EXTRA DATA is: " + extraData);
     }
 
     @Override
@@ -81,7 +71,6 @@ public class FirstActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.d(TAG, "onSaveInstanceState");
-        outState.putString(EXTRA_DATA, "Hello Android!");
     }
 
     @Override
