@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.dysania.artofandroid.chapter02">
 
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -23,6 +25,9 @@
     <activity
       android:name=".ThirdActivity"
       android:process="com.dysania.artofandroid.chapter02.remote"/>
+    <activity android:name=".messenger.MessengerActivity"/>
+    <service android:name=".messenger.MessengerService"
+      android:process=":remote"/>
   </application>
 
 </manifest>

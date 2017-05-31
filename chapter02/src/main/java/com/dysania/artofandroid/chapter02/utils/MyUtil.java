@@ -3,6 +3,8 @@ package com.dysania.artofandroid.chapter02.utils;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
+import java.io.Closeable;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -14,14 +16,24 @@ public class MyUtil {
     public static String getProcessName(Context cxt, int pid) {
         ActivityManager am = (ActivityManager) cxt.getSystemService(Context.ACTIVITY_SERVICE);
         List<RunningAppProcessInfo> runningAppProcessInfos = am.getRunningAppProcesses();
-        if(runningAppProcessInfos == null) {
+        if (runningAppProcessInfos == null) {
             return null;
         }
         for (RunningAppProcessInfo runningAppProcessInfo : runningAppProcessInfos) {
-            if(runningAppProcessInfo.pid == pid) {
+            if (runningAppProcessInfo.pid == pid) {
                 return runningAppProcessInfo.processName;
             }
         }
         return null;
+    }
+
+    public static void close(Closeable closeable) {
+        try {
+            if (closeable != null) {
+                closeable.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
