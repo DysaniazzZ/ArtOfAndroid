@@ -26,7 +26,11 @@
       android:name=".ThirdActivity"
       android:process="com.dysania.artofandroid.chapter02.remote"/>
     <activity android:name=".messenger.MessengerActivity"/>
+    <activity android:name=".aidl.BookManagerActivity"/>
+
     <service android:name=".messenger.MessengerService"
+      android:process=":remote"/>
+    <service android:name=".aidl.BookManagerService"
       android:process=":remote"/>
   </application>
 

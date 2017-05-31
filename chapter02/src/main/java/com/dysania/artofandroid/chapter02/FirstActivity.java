@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.dysania.artofandroid.chapter02.aidl.BookManagerActivity;
 import com.dysania.artofandroid.chapter02.messenger.MessengerActivity;
 import com.dysania.artofandroid.chapter02.model.User;
 import com.dysania.artofandroid.chapter02.utils.MyConstants;
@@ -36,6 +37,13 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MessengerActivity.actionStart(FirstActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_bookmanager).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BookManagerActivity.actionStart(FirstActivity.this);
             }
         });
 
