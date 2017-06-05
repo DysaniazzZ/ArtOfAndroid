@@ -11,6 +11,10 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Toast;
+import com.dysania.artofandroid.chapter02.R;
 import java.util.List;
 
 /**
@@ -72,6 +76,7 @@ public class BookManagerActivity extends AppCompatActivity {
 
         @Override
         public void onNewBookArrivedListener(Book newBook) throws RemoteException {
+            //该方法运行在Binder连接池中，需要Handler切换到UI线程
             mHandler.obtainMessage(MESSAGE_NEW_BOOK_ARRIVED, newBook).sendToTarget();
         }
     };
@@ -84,14 +89,35 @@ public class BookManagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_book_manager);
 
         Intent intent = new Intent(this, BookManagerService.class);
         bindService(intent, mConnection, BIND_AUTO_CREATE);
+
+        findViewById(R.id.btn_get_book).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(BookManagerActivity.this, "click get book button", Toast.LENGTH_SHORT).show();
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (mBookManager != null) {
+                            try {
+                                List<Book> bookList = mBookManager.getBookList();
+                            } catch (RemoteException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }).start();
+            }
+        });
     }
 
     @Override
     protected void onDestroy() {
-        if(mBookManager != null && mBookManager.asBinder().isBinderAlive()) {
+        if (mBookManager != null && mBookManager.asBinder().isBinderAlive()) {
             try {
                 mBookManager.unregisterListener(mIOnNewBookArrivedListener);
                 Log.i(TAG, "unregister listener: " + mIOnNewBookArrivedListener);

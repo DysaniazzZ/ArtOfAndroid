@@ -6,6 +6,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
+import android.os.SystemClock;
 import android.util.Log;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -30,6 +31,7 @@ public class BookManagerService extends Service {
 
         @Override
         public List<Book> getBookList() throws RemoteException {
+            SystemClock.sleep(5000);
             return mBookList;
         }
 
@@ -108,6 +110,9 @@ public class BookManagerService extends Service {
         }
     }
 
+    /**
+     * 确保该方法运行在非UI线程
+     */
     private void onNewBookArrived(Book book) throws RemoteException {
         mBookList.add(book);
 //        Log.i(TAG, "onNewBookArrived, notify listeners: " + mListenerList.size());
