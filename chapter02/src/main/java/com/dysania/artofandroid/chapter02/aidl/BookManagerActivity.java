@@ -7,6 +7,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.IBinder.DeathRecipient;
 import android.os.Message;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
@@ -42,12 +43,20 @@ public class BookManagerActivity extends AppCompatActivity {
         }
     };
 
+    private DeathRecipient mDeathRecipient = new DeathRecipient() {
+        @Override
+        public void binderDied() {
+            Log.e(TAG, "binder died. tname: " + Thread.currentThread().getName());
+        }
+    };
+
     private ServiceConnection mConnection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             mBookManager = IBookManager.Stub.asInterface(service);
             try {
+                mBookManager.asBinder().linkToDeath(mDeathRecipient, 0);
                 List<Book> bookList = mBookManager.getBookList();
                 Log.i(TAG, "query book list, list type: " + bookList.getClass().getCanonicalName());
                 Log.i(TAG, "query book list: " + bookList.toString());
@@ -68,7 +77,7 @@ public class BookManagerActivity extends AppCompatActivity {
         @Override
         public void onServiceDisconnected(ComponentName name) {
             mBookManager = null;
-            Log.e(TAG, "binder died.");
+            Log.e(TAG, "onServiceDisconnected. tname: " + Thread.currentThread().getName());
         }
     };
 
