@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import socket.TCPClientActivity;
 
 public class FirstActivity extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btn_bookmanager).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.btn_aidl).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 BookManagerActivity.actionStart(FirstActivity.this);
@@ -52,6 +53,13 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ProviderActivity.actionStart(FirstActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_socket).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TCPClientActivity.actionStart(FirstActivity.this);
             }
         });
 

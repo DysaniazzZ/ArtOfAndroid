@@ -3,12 +3,15 @@
   package="com.dysania.artofandroid.chapter02">
 
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
   <permission
     android:name="com.dysania.artofandroid.chapter02.permission.ACCESS_BOOK_SERVICE"
     android:protectionLevel="normal"/>
 
-  <permission android:name="com.dysania.PROVIDER"
+  <permission
+    android:name="com.dysania.PROVIDER"
     android:protectionLevel="normal"/>
 
   <application
@@ -35,12 +38,15 @@
     <activity android:name=".messenger.MessengerActivity"/>
     <activity android:name=".aidl.BookManagerActivity"/>
     <activity android:name=".provider.ProviderActivity"/>
+    <activity android:name="socket.TCPClientActivity"/>
 
     <service
       android:name=".messenger.MessengerService"
       android:process=":remote"/>
     <service
       android:name=".aidl.BookManagerService"
+      android:process=":remote"/>
+    <service android:name="socket.TCPServerService"
       android:process=":remote"/>
 
     <provider

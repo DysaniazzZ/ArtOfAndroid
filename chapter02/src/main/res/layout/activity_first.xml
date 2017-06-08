@@ -27,17 +27,24 @@
     android:textAllCaps="false"/>
 
   <Button
-    android:id="@+id/btn_bookmanager"
+    android:id="@+id/btn_aidl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Open BookManager Activity"
+    android:text="Open AIDL Activity"
     android:textAllCaps="false"/>
 
   <Button
     android:id="@+id/btn_provider"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Open Provider Activity"
+    android:text="Open ContentProvider Activity"
+    android:textAllCaps="false"/>
+
+  <Button
+    android:id="@+id/btn_socket"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Open Socket Activity"
     android:textAllCaps="false"/>
 
 </LinearLayout>
