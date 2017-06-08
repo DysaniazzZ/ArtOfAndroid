@@ -2,8 +2,10 @@ package com.dysania.artofandroid.chapter02.aidl;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.Parcel;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.os.SystemClock;
@@ -77,6 +79,25 @@ public class BookManagerService extends Service {
             mListenerList.finishBroadcast();
             Log.i(TAG, "registerListener, current size: " + N);
         }
+
+        @Override
+        public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+            int check = checkCallingOrSelfPermission("com.dysania.artofandroid.chapter02.permission.ACCESS_BOOK_SERVICE");
+            if (check == PackageManager.PERMISSION_DENIED) {
+                return false;
+            }
+
+            String packName = null;
+            String[] packages = getPackageManager().getPackagesForUid(getCallingUid());
+            if (packages != null && packages.length > 0) {
+                packName = packages[0];
+            }
+            if (!packName.startsWith("com.dysania")) {
+                return false;
+            }
+
+            return super.onTransact(code, data, reply, flags);
+        }
     };
 
     @Override
@@ -139,6 +160,11 @@ public class BookManagerService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
+        //方法一：在onBind方法中验证权限
+        int check = checkCallingOrSelfPermission("com.dysania.artofandroid.chapter02.permission.ACCESS_BOOK_SERVICE");
+        if (check == PackageManager.PERMISSION_DENIED) {
+            return null;
+        }
         return mBinder;
     }
 

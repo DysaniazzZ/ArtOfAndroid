@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import com.dysania.artofandroid.chapter02.aidl.BookManagerActivity;
 import com.dysania.artofandroid.chapter02.messenger.MessengerActivity;
 import com.dysania.artofandroid.chapter02.model.User;
+import com.dysania.artofandroid.chapter02.provider.ProviderActivity;
 import com.dysania.artofandroid.chapter02.utils.MyConstants;
 import com.dysania.artofandroid.chapter02.utils.MyUtil;
 import java.io.File;
@@ -44,6 +45,13 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 BookManagerActivity.actionStart(FirstActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_provider).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProviderActivity.actionStart(FirstActivity.this);
             }
         });
 

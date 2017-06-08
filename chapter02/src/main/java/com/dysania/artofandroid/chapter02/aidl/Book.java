@@ -7,10 +7,13 @@ import android.os.Parcelable;
  * Created by DysaniazzZ on 23/05/2017.
  */
 
-public class Book implements Parcelable{
+public class Book implements Parcelable {
 
     public int bookId;
     public String bookName;
+
+    public Book() {
+    }
 
     public Book(int bookId, String bookName) {
         this.bookId = bookId;
