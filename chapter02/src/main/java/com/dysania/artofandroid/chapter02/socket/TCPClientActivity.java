@@ -1,4 +1,4 @@
-package socket;
+package com.dysania.artofandroid.chapter02.socket;
 
 import android.content.Context;
 import android.content.Intent;

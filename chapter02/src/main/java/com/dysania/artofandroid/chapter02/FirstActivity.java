@@ -17,7 +17,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import socket.TCPClientActivity;
+import com.dysania.artofandroid.chapter02.socket.TCPClientActivity;
 
 public class FirstActivity extends AppCompatActivity {
 
