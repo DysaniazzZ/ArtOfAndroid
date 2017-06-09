@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.dysania.artofandroid.chapter02.aidl.BookManagerActivity;
+import com.dysania.artofandroid.chapter02.binderpool.BinderPoolActivity;
 import com.dysania.artofandroid.chapter02.messenger.MessengerActivity;
 import com.dysania.artofandroid.chapter02.model.User;
 import com.dysania.artofandroid.chapter02.provider.ProviderActivity;
@@ -60,6 +61,13 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TCPClientActivity.actionStart(FirstActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_binderpool).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BinderPoolActivity.actionStart(FirstActivity.this);
             }
         });
 
