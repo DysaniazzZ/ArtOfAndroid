@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <com.dysania.artofandroid.chapter03.SlideView
+    android:id="@+id/slide_view"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="30dp"
+    android:layout_centerHorizontal="true"
+    android:background="@color/colorAccent"/>
+
+  <com.dysania.artofandroid.chapter03.ScrollerView
+    android:id="@+id/scroller_view"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="30dp"
+    android:layout_below="@+id/slide_view"
+    android:layout_centerHorizontal="true"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:text="Scroller"
+    android:textColor="@color/colorWhite"/>
+
+  <TextView
+    android:id="@+id/anim_view"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="30dp"
+    android:layout_below="@+id/scroller_view"
+    android:layout_centerHorizontal="true"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:text="Anim"
+    android:textColor="@color/colorWhite"/>
+
+  <TextView
+    android:id="@+id/handler_view"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="30dp"
+    android:layout_below="@+id/anim_view"
+    android:layout_centerHorizontal="true"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:text="Handler"
+    android:textColor="@color/colorWhite"/>
+
+</RelativeLayout>
