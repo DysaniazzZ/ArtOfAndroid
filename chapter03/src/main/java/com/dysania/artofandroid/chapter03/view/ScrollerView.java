@@ -1,4 +1,4 @@
-package com.dysania.artofandroid.chapter03;
+package com.dysania.artofandroid.chapter03.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

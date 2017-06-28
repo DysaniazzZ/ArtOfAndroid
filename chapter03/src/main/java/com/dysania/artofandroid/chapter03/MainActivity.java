@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
+import com.dysania.artofandroid.chapter03.view.ScrollerView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -85,6 +86,20 @@ public class MainActivity extends AppCompatActivity {
                 //Handler
                 mCount = 0;
                 mHandler.sendEmptyMessage(MESSAGE_SCROLL_TO);
+            }
+        });
+
+        findViewById(R.id.btn_demo1).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Demo1Activity.actionStart(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.btn_demo2).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Demo2Activity.actionStart(MainActivity.this);
             }
         });
     }
