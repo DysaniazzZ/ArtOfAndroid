@@ -17,6 +17,16 @@
       </intent-filter>
     </activity>
     <activity android:name=".DemoActivity"/>
+
+    <receiver android:name=".MyAppWidgetProvider">
+      <meta-data
+        android:name="android.appwidget.provider"
+        android:resource="@xml/appwidget_provider_info"/>
+      <intent-filter>
+        <action android:name="com.dysania.artofandroid.chapter05.action.ACTION_CLICK"/>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+      </intent-filter>
+    </receiver>
   </application>
 
 </manifest>
