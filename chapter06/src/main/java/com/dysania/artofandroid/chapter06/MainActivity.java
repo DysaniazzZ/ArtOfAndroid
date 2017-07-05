@@ -1,5 +1,6 @@
 package com.dysania.artofandroid.chapter06;
 
+import android.graphics.drawable.ScaleDrawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,5 +21,8 @@ public class MainActivity extends AppCompatActivity {
                 drawable.startTransition(3000);
             }
         });
+
+        ScaleDrawable scaleDrawable = (ScaleDrawable) findViewById(R.id.v_scale).getBackground();
+        scaleDrawable.setLevel(10);      //lever默认为0，无法显示。level范围为0~10000。level越大，显示的越大
     }
 }
