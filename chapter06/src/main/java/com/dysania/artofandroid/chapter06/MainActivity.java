@@ -28,5 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         ClipDrawable clipDrawable = (ClipDrawable) findViewById(R.id.v_clip).getBackground();
         clipDrawable.setLevel(5000);
+
+        View vCustom = findViewById(R.id.v_custom);
+        CustomDrawable customDrawable = new CustomDrawable(getResources().getColor(R.color.colorAccent));
+        vCustom.setBackground(customDrawable);
     }
 }
