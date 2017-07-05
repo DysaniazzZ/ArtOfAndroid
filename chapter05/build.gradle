@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.dysania.chapter05"
+        applicationId "com.dysania.artofandroid.chapter05"
         minSdkVersion 18
         targetSdkVersion 22
         versionCode 1
