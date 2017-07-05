@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="oval">
+
+  <size
+    android:height="300dp"
+    android:width="300dp"/>
+
+  <gradient
+    android:centerColor="@color/colorRed"
+    android:endColor="@color/colorBlue"
+    android:gradientRadius="150dp"
+    android:startColor="@color/colorGreen"
+    android:type="radial"/>
+
+  <!--radial必须和gradientRadius（渐变半径）联用才会有效果-->
+
+</shape>

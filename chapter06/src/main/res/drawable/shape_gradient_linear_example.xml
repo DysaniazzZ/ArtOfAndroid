@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="oval">
+
+  <size
+    android:height="300dp"
+    android:width="300dp"/>
+
+  <gradient
+    android:angle="90"
+    android:centerColor="@color/colorRed"
+    android:endColor="@color/colorBlue"
+    android:startColor="@color/colorGreen"
+    android:type="linear"/>
+
+  <!--angle默认为0，表示从左到右。必须为45的倍数。90为从下到上-->
+
+</shape>
