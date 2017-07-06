@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ViewAnimActivity.actionStart(MainActivity.this);
+                overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);     //必须设置在startActivity之后
             }
         });
 

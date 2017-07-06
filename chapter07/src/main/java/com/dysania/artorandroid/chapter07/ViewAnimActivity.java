@@ -66,4 +66,10 @@ public class ViewAnimActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);     //必须设置在finish之后
+    }
 }
