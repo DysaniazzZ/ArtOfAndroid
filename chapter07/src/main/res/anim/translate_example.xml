@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+  android:duration="2000"
+  android:fillAfter="false"
+  android:fromXDelta="-300"
+  android:interpolator="@android:anim/bounce_interpolator"
+  android:repeatCount="5"
+  android:repeatMode="restart"
+  android:toXDelta="300"/>
+
+  <!--linear_interpolator:恒定速度-->
+  <!--accelerate_interpolator:加速（初始速度很慢，一直加速）-->
+  <!--decelerate_interpolator:减速（初始速度很快，一直减速）-->
+  <!--accelerate_decelerate_interpolator:先加速后减速（两头速度慢，中间速度快）-->
+
+  <!--overshoot_interpolator:加速（冲过一定值后又返回）-->
+  <!--anticipate_interpolator:加速（开始的时候向后甩，然后向前加速）-->
+  <!--anticipate_overshoot_interpolator:加速（开始的时候向后甩，然后向前加速，向前甩，最后返回）-->
+
+  <!--cycle_interpolator:速度改变沿正弦曲线，动画会循环特定次数-->
+  <!--bounce_interpolator:加速，动画的结束的时候有几次弹起效果-->
+
