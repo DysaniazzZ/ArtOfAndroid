@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+  android:animation="@anim/set_item_anim"
+  android:animationOrder="normal"
+  android:delay="0.5"/>
+
+  <!--比如子元素入场动画的时间周期为300ms，那么0.5表示每个子元素都需要延迟150ms才能播放入场动画-->

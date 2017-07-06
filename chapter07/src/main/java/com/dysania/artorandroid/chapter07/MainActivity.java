@@ -25,5 +25,12 @@ public class MainActivity extends AppCompatActivity {
                 FrameAnimActivity.actionStart(MainActivity.this);
             }
         });
+
+        findViewById(R.id.btn_layout_anim).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutAnimActivity.actionStart(MainActivity.this);
+            }
+        });
     }
 }
