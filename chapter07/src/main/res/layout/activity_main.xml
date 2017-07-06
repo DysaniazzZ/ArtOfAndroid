@@ -6,54 +6,20 @@
   android:gravity="center_horizontal"
   android:orientation="vertical">
 
-  <TextView
-    android:id="@+id/tv_translate"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
+  <Button
+    android:id="@+id/btn_view_anim"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    android:background="@color/colorAccent"
-    android:gravity="center"
-    android:text="Translate"
-    android:textColor="@color/colorWhite"/>
+    android:text="View Anim"
+    android:textAllCaps="false"/>
 
-  <TextView
-    android:id="@+id/tv_scale"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
+  <Button
+    android:id="@+id/btn_frame_anim"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    android:background="@color/colorAccent"
-    android:gravity="center"
-    android:text="Scale"
-    android:textColor="@color/colorWhite"/>
-
-  <TextView
-    android:id="@+id/tv_rotate"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-    android:layout_marginTop="10dp"
-    android:background="@color/colorAccent"
-    android:gravity="center"
-    android:text="Rotate"
-    android:textColor="@color/colorWhite"/>
-
-  <TextView
-    android:id="@+id/tv_alpha"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-    android:layout_marginTop="10dp"
-    android:background="@color/colorAccent"
-    android:gravity="center"
-    android:text="Alpha"
-    android:textColor="@color/colorWhite"/>
-
-  <TextView
-    android:id="@+id/tv_set"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-    android:layout_marginTop="10dp"
-    android:background="@color/colorAccent"
-    android:gravity="center"
-    android:text="Set"
-    android:textColor="@color/colorWhite"/>
+    android:text="Frame Anim"
+    android:textAllCaps="false"/>
 
 </LinearLayout>
