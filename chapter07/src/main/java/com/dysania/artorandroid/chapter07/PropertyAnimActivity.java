@@ -96,6 +96,13 @@ public class PropertyAnimActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //TODO 页面关闭时需要将无限循环的属性动画停止，避免出现内存泄露
+        //ValueAnimator.cancel();
+    }
+
     public static class ViewWrapper {
 
         private View mTargetView;
