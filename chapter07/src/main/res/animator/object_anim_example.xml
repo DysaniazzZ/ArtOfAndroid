@@ -2,6 +2,10 @@
 <objectAnimator
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:propertyName="translationY"
+  android:repeatCount="-1"
+  android:repeatMode="reverse"
   android:valueFrom="-200"
   android:valueTo="200"
   android:valueType="floatType"/>
+
+  <!--不指定duration默认为300ms-->

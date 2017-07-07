@@ -8,12 +8,32 @@
 
   <TextView
     android:id="@+id/tv_object_animator"
-    android:layout_width="100dp"
+    android:layout_width="150dp"
     android:layout_height="50dp"
     android:layout_marginTop="10dp"
     android:background="@color/colorAccent"
     android:gravity="center"
     android:text="Object Animator"
+    android:textColor="@color/colorWhite"/>
+
+  <TextView
+    android:id="@+id/tv_value_animator"
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:text="Value Animator"
+    android:textColor="@color/colorWhite"/>
+
+  <TextView
+    android:id="@+id/tv_set_animator"
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:text="Set Animator"
     android:textColor="@color/colorWhite"/>
 
 </LinearLayout>
