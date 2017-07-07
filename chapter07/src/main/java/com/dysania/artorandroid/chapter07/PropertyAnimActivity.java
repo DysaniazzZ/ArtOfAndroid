@@ -2,8 +2,10 @@ package com.dysania.artorandroid.chapter07;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -65,5 +67,50 @@ public class PropertyAnimActivity extends AppCompatActivity {
                 set.setDuration(1500).start();
             }
         });
+
+        findViewById(R.id.btn_test1).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewWrapper viewWrapper = new ViewWrapper(v);
+                ObjectAnimator.ofInt(viewWrapper, "width", 800).setDuration(1000).start();
+            }
+        });
+
+        final IntEvaluator evaluator = new IntEvaluator();
+        findViewById(R.id.btn_test2).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                ValueAnimator valueAnimator = ValueAnimator.ofInt(1, 100);
+                valueAnimator.addUpdateListener(new AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        //获取当前动画的进度（浮点数，0~1之间）
+                        float animatedFraction = animation.getAnimatedFraction();
+                        //调用整型估值器，计算出宽度赋值给目标View
+                        v.getLayoutParams().width = evaluator.evaluate(animatedFraction, v.getWidth(), 800);
+                        v.requestLayout();
+                    }
+                });
+                valueAnimator.setDuration(1000).start();
+            }
+        });
+    }
+
+    public static class ViewWrapper {
+
+        private View mTargetView;
+
+        public ViewWrapper(View targetView) {
+            mTargetView = targetView;
+        }
+
+        public void setWidth(int width) {
+            mTargetView.getLayoutParams().width = width;
+            mTargetView.requestLayout();
+        }
+
+        public int getWidth() {
+            return mTargetView.getLayoutParams().width;
+        }
     }
 }

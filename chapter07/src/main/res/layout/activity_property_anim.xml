@@ -36,4 +36,18 @@
     android:text="Set Animator"
     android:textColor="@color/colorWhite"/>
 
+  <Button
+    android:id="@+id/btn_test1"
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="30dp"
+    android:text="Test1"/>
+
+  <Button
+    android:id="@+id/btn_test2"
+    android:layout_width="150dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="30dp"
+    android:text="Test2"/>
+
 </LinearLayout>
