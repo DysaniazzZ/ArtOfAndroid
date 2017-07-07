@@ -30,4 +30,12 @@
     android:text="Layout Anim"
     android:textAllCaps="false"/>
 
+  <Button
+    android:id="@+id/btn_property_anim"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:text="Property Anim"
+    android:textAllCaps="false"/>
+
 </LinearLayout>

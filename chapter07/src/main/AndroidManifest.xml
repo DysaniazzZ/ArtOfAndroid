@@ -19,6 +19,7 @@
     <activity android:name=".ViewAnimActivity"/>
     <activity android:name=".FrameAnimActivity"/>
     <activity android:name=".LayoutAnimActivity"/>
+    <activity android:name=".PropertyAnimActivity"/>
   </application>
 
 </manifest>
