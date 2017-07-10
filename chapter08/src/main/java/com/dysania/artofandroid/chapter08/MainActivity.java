@@ -1,15 +1,18 @@
 package com.dysania.artofandroid.chapter08;
 
+import android.app.Dialog;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,6 +58,26 @@ public class MainActivity extends AppCompatActivity {
                 mLastX = rawX;
                 mLastY = rawY;
                 return false;
+            }
+        });
+
+        findViewById(R.id.btn_dialog).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(MainActivity.this);          //普通的Dialog必须采用Activity的Context
+                TextView textView = new TextView(MainActivity.this);
+                textView.setText("This is a dialog.");
+                textView.setGravity(Gravity.CENTER);
+                dialog.setContentView(textView);
+                dialog.show();
+
+//                Dialog dialog = new Dialog(getApplicationContext());
+//                TextView textView = new TextView(getApplicationContext());
+//                textView.setText("This is a dialog.");
+//                textView.setGravity(Gravity.CENTER);
+//                dialog.setContentView(textView);
+//                dialog.getWindow().setType(LayoutParams.TYPE_TOAST);  //可以把Dialog对应的Window类型设置为系统级别，就可以使用Application的Context了
+//                dialog.show();
             }
         });
     }
