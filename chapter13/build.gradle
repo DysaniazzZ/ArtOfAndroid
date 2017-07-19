@@ -10,6 +10,9 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+
+        //enable multi dex support
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -21,4 +24,6 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
+    //add dependency to support multi dex
+    compile 'com.android.support:multidex:1.0.1'
 }
