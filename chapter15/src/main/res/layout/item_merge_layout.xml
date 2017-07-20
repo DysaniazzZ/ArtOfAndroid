@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--merge主要是和include联合使用，用来消除多余的布局层级-->
+<!--例如：父布局和子布局根元素都是LinearLayout，而且orientation都一样，这时候子布局的根元素LinearLayout就是多余的-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Add"
+    android:textAllCaps="false"/>
+
+  <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Delete"
+    android:textAllCaps="false"/>
+
+</merge>

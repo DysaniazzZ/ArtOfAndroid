@@ -16,4 +16,7 @@
     android:layout_height="50dp"
     android:layout_margin="10dp"/>
 
+  <include
+    layout="@layout/item_merge_layout"/>
+
 </LinearLayout>
