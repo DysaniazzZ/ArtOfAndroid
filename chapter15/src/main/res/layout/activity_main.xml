@@ -19,4 +19,13 @@
   <include
     layout="@layout/item_merge_layout"/>
 
+  <!--ViewStub用来按需加载布局-->
+  <!--inflatedId是所加载布局根元素的id-->
+  <ViewStub
+    android:id="@+id/viewstub_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:inflatedId="@+id/error_layout"
+    android:layout="@layout/item_viewstub_layout"/>
+
 </LinearLayout>
