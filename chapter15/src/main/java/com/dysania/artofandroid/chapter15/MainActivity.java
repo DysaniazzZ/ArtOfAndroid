@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        findViewById(R.id.ll_title_layout).setBackgroundColor(getResources().getColor(R.color.colorAccent));
-        findViewById(R.id.include_title_layout).setBackgroundColor(getResources().getColor(R.color.colorAccent));
+//        findViewById(R.id.root_layout).setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        findViewById(R.id.include_layout).setBackgroundColor(getResources().getColor(R.color.colorAccent));
     }
 }
