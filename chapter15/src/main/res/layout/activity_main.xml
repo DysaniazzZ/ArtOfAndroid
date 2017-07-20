@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <!--include标签只支持android:layout开头的属性，android:id除外。-->
+  <!--include标签中的layout:width和layout:height必须同时存在，否则设置无效-->
+  <!--include标签和被包含布局根元素同时制定了id属性，以include标签指定的id为准-->
+  <include
+    android:id="@+id/include_title_layout"
+    layout="@layout/item_title_layout"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"/>
+
+</LinearLayout>
